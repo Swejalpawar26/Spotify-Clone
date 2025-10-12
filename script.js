@@ -56,29 +56,26 @@ async function main() {
     songUL.innerHTML = songUL.innerHTML +
 
       `<li><img class="invert" src="music.svg" alt="">
-                            <div class="songinfo">
-                                <div> ${cleanSongName(song)}</div>
-                                <div>Artist Name</div>
-                            </div>
-                            <div class="playnow">
-                                <span>Play Now</span>
-                                <img class="invert" src="play.svg" alt="">
-                            </div>
-                        </li>`
-
-
+        <div class="info">
+          <div> ${cleanSongName(song)}</div>
+          <div>Artist Name</div>
+        </div>
+        <div class="playnow">
+          <span>Play Now</span>
+          <img class="invert" src="play.svg" alt="">
+        </div>
+      </li>`
   }
 
+    //play first song
+    var audio = new Audio(songs[0])
+    //audio.play()
 
-  //play first song
-  var audio = new Audio(songs[0])
-  //audio.play()
+    audio.addEventListener("ontimeupdate", () => {
+      let duration = audio.duration;
+      console.log(duration);
+    })
+  }
 
-  audio.addEventListener("ontimeupdate", () => {
-    let duration = audio.duration;
-    console.log(duration);
-  })
-}
-
-main();
+  main();
 
