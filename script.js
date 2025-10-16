@@ -45,6 +45,10 @@ function cleanSongName(song) {
   return song;
 }
 
+const playmusic=(track)=>{
+  let audio=new Audio("songs/"+track)
+  audio.play()
+}
 
 async function main() {
   //get list of all songs
@@ -67,15 +71,12 @@ async function main() {
       </li>`
   }
 
-    //play first song
-    var audio = new Audio(songs[0])
-    //audio.play()
+   Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e => {
+  e.addEventListener("click", element => {
+    playmusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+  });
+});
 
-    audio.addEventListener("ontimeupdate", () => {
-      let duration = audio.duration;
-      console.log(duration);
-    })
-  }
-
+}
   main();
 
