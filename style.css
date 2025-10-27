@@ -218,3 +218,36 @@ body{
     left: 0%;
     transition: left 0.5s;
 }
+
+/* --- Buttons in the header --- */
+.signupbtn {
+  background-color: transparent;
+  color: #a7a7a7;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-right: 10px;
+}
+
+.signupbtn:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+.loginbtn {
+  background-color: white;
+  color: black;
+  border: none;
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.loginbtn:hover {
+  transform: scale(1.05);
+}
